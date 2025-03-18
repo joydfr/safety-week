@@ -120,6 +120,29 @@ La durée de conservation des journaux doit être comprise entre six mois et un 
 
 La mise à jour et la maintenance de la documentation et de la journalisation sont cruciales, comme expliqué précédemment. Elles permettent la collaboration entre l'équipe de développement et l'équipe de sécurité. Grâce à l'analyse effectuée avec la journalisation, les équipes peuvent comprendre comment les données circulent au sein du système, ce qui permet d'identifier les points où les données pourraient être vulnérables. La documentation est également utilisée pour suivre les mises à jour et les correctifs de sécurité appliqués au système, ce qui aide à garantir que les vulnérabilités connues sont corrigées. La documentation et la journalisation peuvent être utilisées pour planifier les tests de pénétration en identifiant les points d'entrée potentiels et les vulnérabilités à tester.
 
+## Test et sécurité
+
+### Test de sécurité
+
+Dans le paragraphe précédent, nous avons vu que la journalisation et la documentation pouvaient être utiles pour planifier des tests de pénétration. Pour réaliser des tests de sécurité, nous pouvons commencer par des tests simples comme :
+
+- Fuzz Testing : Cela consiste à injecter des données aléatoires dans l'API pour tester sa robustesse face à des entrées invalides ou malveillantes. Ce type de test peut révéler des vulnérabilités telles que les injections SQL ou les attaques XSS.
+
+- Verb Fuzzing : Ce test consiste à tester les différentes méthodes HTTP (GET, POST, PUT, DELETE, etc.) pour identifier les vulnérabilités dans les endpoints REST.
+
+L'intégration des tests de sécurité dès le début du cycle de développement permet d'identifier et de corriger les vulnérabilités tôt.
+Tests avancés
+
+Pour aller plus loin, nous pouvons également :
+
+- Simulation d'Attaques (DAST : Dynamic Application Security Testing) : Cette méthode permet de tester l'API en simulant des attaques réelles pour identifier les vulnérabilités qui ne sont apparentes qu'à l'exécution. Cela inclut la validation des mécanismes d'authentification et d'autorisation.
+
+- Simulation d'Attaques Réalistes : En effectuant des tests de pénétration pour simuler des attaques réalistes et identifier les vulnérabilités qui pourraient être exploitées par des attaquants.
+
+Outils de test
+
+Des outils comme Postman peuvent être utilisés pour automatiser les tests de sécurité et simuler divers scénarios d'attaque. OWASP ZAP est un outil open source pour la simulation d'attaques et la détection de vulnérabilités.
+
 ## Ressources
 
 https://aws.amazon.com/fr/what-is/mfa/
@@ -132,3 +155,5 @@ https://fr.linkedin.com/advice/0/how-do-you-secure-encrypt-your-api-data?lang=fr
 https://www.linkedin.com/advice/3/how-do-you-document-api-errors-exceptions-status?lang=fr&originalSubdomain=fr
 https://api.gerermesaffaires.com/documentation/rest-api/error-codes/
 https://www.cnil.fr/fr/la-cnil-publie-une-recommandation-relative-aux-mesures-de-journalisation
+https://fr.parasoft.com/learning-center/api-security-testing-guide/
+https://www.astera.com/fr/type/blog/api-test-automation/
