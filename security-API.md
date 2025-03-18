@@ -67,3 +67,5 @@ Chaque rôle est associé à des privilèges spécifiques, ce qui permet de limi
 Pour maintenir la sécurité, il est important d'examiner et d'évaluer régulièrement les permissions attribuées aux utilisateurs. Cela garantit qu'elles restent appropriées et nécessaires. De plus, nous recommandons de journaliser toutes les activités de l'API pour détecter toute action non autorisée.
 
 Enfin, pour protéger les interactions avec notre base de données, nous appliquons des pratiques d'authentification robustes. Ces pratiques sont adaptées au niveau d'implication de chaque utilisateur, garantissant ainsi une sécurité maximale.
+
+## Authentification robuste selon les autorisations
