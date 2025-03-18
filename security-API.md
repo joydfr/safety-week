@@ -2,7 +2,7 @@
 
 ## Table des matières
 
-- [Authentification et autorisatio](#Authetification-et-autorisation)
+- [Authentification et autorisation](#Authetification-et-autorisation)
 - [Gestion des données](#Gestion-des-données)
 - [Gestion de l'API](#Gestion-de-l-API)
 - [Tests et sécurité](#Test-et-sécurité)
@@ -98,6 +98,24 @@ Pour éviter le vol de données, nous vous conseillons de limiter les données c
 
 Pour sécuriser les données sensibles, nous recommandons l'utilisation de tokens et de jetons. Par exemple, les numéros de carte de crédit peuvent être remplacés par des tokens, permettant ainsi de stocker et de traiter les transactions sans risque d'exposition des informations sensibles. De plus, l'utilisation du protocole HTTPS est essentielle pour chiffrer toutes les communications entre l'API et les utilisateurs, limitant ainsi les attaques de type "Man-in-the-middle". Cela garantit que les données échangées restent confidentielles et sécurisées tout au long du processus.
 
+## Gestion de l'API
+
+### Documentation et journalisation
+
+#### Documentation de l'API
+
+Pour votre documentation, nous vous recommandons d'expliquer l'objectif et les recommandations de votre API. Une documentation API complète, qui fournit des informations détaillées sur l'API, est une ressource essentielle pour les développeurs. Elle leur donne des instructions claires et des exemples pour les aider à comprendre et à utiliser l'API efficacement, ainsi que pour comprendre comment elle est sécurisée. La documentation des processus de sécurité et des politiques de gestion des incidents aidera à démontrer la conformité aux réglementations. Cela facilite également la collaboration entre les équipes de développement et de sécurité.
+
+La documentation de chaque endpoint doit inclure les méthodes HTTP, les paramètres requis, ainsi que des exemples de requêtes et réponses. Elle doit également inclure une liste des codes d'erreur possibles et leur signification. Les codes d'erreur sont divisés en cinq catégories, basées sur le premier chiffre : réponses informatives (1xx), réponses réussies (2xx), réponses de redirection (3xx), réponses d’erreur client (4xx) et réponses d’erreur serveur (5xx). Il est important d’utiliser le code d’état approprié pour chaque scénario d’erreur, et de ne pas créer le vôtre ou d’utiliser des codes qui ne correspondent pas à la sémantique d’erreur. Par exemple, 400 Bad Request doit être utilisé pour les paramètres invalides ou manquants, 401 Unauthorized pour les erreurs d’authentification, 403 Forbidden pour les erreurs d’autorisation, et 404 Not Found pour les erreurs de ressource introuvable. Assurez-vous que la documentation est régulièrement mise à jour pour refléter les changements apportés à l'API et réalisez des tests pour vérifier leur exactitude.
+
+#### Journalisation
+
+La journalisation est un outil essentiel pour assurer la sécurité des traitements de données. Elle permet la conservation des données de journalisation des actions d'accès, de création, de modification et de suppression sur un traitement de données personnelles. Dans le contexte de systèmes multi-utilisateurs, elle assure une traçabilité des accès et des actions des différentes personnes accédant aux systèmes d'informations, et plus précisément, aux traitements de données personnelles mis en œuvre. Les journaux contiennent des informations sur les personnes administrant ou accédant aux ressources, telles que l'identifiant utilisateur, la date et l'heure de l'accès, ainsi que l'identifiant de l'équipement utilisé. Ces données constituent un outil efficace de détection et d'investigation en cas d'incident, d'intrusion dans les systèmes informatiques, ou de détournement d'usage des traitements de données par les personnes habilitées.
+
+Il est recommandé que les données de journalisation soient régulièrement analysées à l'aide d'analyses automatiques afin de permettre la détection rapide des éventuelles utilisations indues du traitement. Pour cela, il est possible d'utiliser un SIEM (Solutions de Gestion des Informations et des Événements de Sécurité) qui permet d'examiner et d'interpréter plus facilement ce qui se passe sur le réseau et d'obtenir des informations exploitables. Cela aide à identifier les incidents en corrélant les événements et en détectant les modèles de menace. Nous pouvons également utiliser un UEBA (Analyse du Comportement des Utilisateurs et des Entités) qui utilise des modèles de comportement pour détecter les actions anormales des utilisateurs ou des entités, ce qui peut indiquer une menace.
+
+La durée de conservation des journaux doit être comprise entre six mois et un an, sauf cas spécifique où une durée plus longue pourrait être justifiée.
+
 ## Ressources
 
 https://aws.amazon.com/fr/what-is/mfa/
@@ -107,3 +125,6 @@ https://support.microsoft.com/fr-fr/account-billing/sauvegarder-les-informations
 https://www.cnil.fr/fr/securite-api-interfaces-de-programmation-applicative
 https://api.gouv.fr/les-api/api-pseudonymisation-documents
 https://fr.linkedin.com/advice/0/how-do-you-secure-encrypt-your-api-data?lang=fr
+https://www.linkedin.com/advice/3/how-do-you-document-api-errors-exceptions-status?lang=fr&originalSubdomain=fr
+https://api.gerermesaffaires.com/documentation/rest-api/error-codes/
+https://www.cnil.fr/fr/la-cnil-publie-une-recommandation-relative-aux-mesures-de-journalisation
