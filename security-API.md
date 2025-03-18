@@ -116,6 +116,10 @@ Il est recommandé que les données de journalisation soient régulièrement ana
 
 La durée de conservation des journaux doit être comprise entre six mois et un an, sauf cas spécifique où une durée plus longue pourrait être justifiée.
 
+### Mise à jour et maintanance
+
+La mise à jour et la maintenance de la documentation et de la journalisation sont cruciales, comme expliqué précédemment. Elles permettent la collaboration entre l'équipe de développement et l'équipe de sécurité. Grâce à l'analyse effectuée avec la journalisation, les équipes peuvent comprendre comment les données circulent au sein du système, ce qui permet d'identifier les points où les données pourraient être vulnérables. La documentation est également utilisée pour suivre les mises à jour et les correctifs de sécurité appliqués au système, ce qui aide à garantir que les vulnérabilités connues sont corrigées. La documentation et la journalisation peuvent être utilisées pour planifier les tests de pénétration en identifiant les points d'entrée potentiels et les vulnérabilités à tester.
+
 ## Ressources
 
 https://aws.amazon.com/fr/what-is/mfa/
