@@ -1,0 +1,13 @@
+## Introduction
+
+In an era where security is increasingly paramount, our proposal is designed to bolster data protection and interaction within your peer-to-peer formation application. By implementing robust security measures, we ensure the confidentiality and integrity of information exchanged between users, fostering a safe and effective learning environment.
+
+## Security Objectives
+
+We recognize that security is a critical aspect of your peer-to-peer formation application, where trust and confidentiality are paramount. Our proposal is tailored to meet your specific needs in data protection and threat prevention, allowing you to focus on continuously enhancing the user experience. Our comprehensive security plan for your application provides a detailed, layer-by-layer approach to securing APIs, back-end, and front-end components. We outline the measures necessary for optimal protection by combining innovative solutions with best practices, adhering to established web security recommendations.
+
+## Primary Objectives
+
+Our principal objective is to ensure defense in depth, by protecting each layer of the system independently. This helps to guarantee a continued maintenance of the site, even in case of compromise on the Front-End. Thanks to this approach, API and Back-end remain secure, thus avoiding total corruption of the service.
+
+Our second objective is to provide a personalized security offer, designed to meet your real usage needs. We aim to avoid any user frustration that could arise from a mismatch between the security measures in place and the services offered. Indeed, we understand that security must be both effective and transparent to the user, in order to ensure a smooth and optimal experience.
