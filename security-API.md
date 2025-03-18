@@ -80,7 +80,7 @@ Un système Multifactorielle serait un impératif car c'est deux roles ont accè
 
 Un système authentification à deux facteurs (2FA) car chacun a accès à des données les étudiants au contenu et les formateur au données des étudiants, ceci nécéssite une protection supplémentaire. Le système d'authentification permettra de protèger leurs compte contre des accès non autorisés tout en étant simple à mettre en place. Mise en place d'un mot de passe robuste avec regex dans la partie back-end moins contraintes que pour les super-adminasteur et Admin et pour le deuxième facteur l'envoie d'un mail avec un code à saisir. Pour garder la sécurité mais éviter l'aspect contrainiant de la double authentification priviligié une solution 2FA permettant de mémoirisé les appareils utilisés régulierement. L'utilisateur n'aura pas à saissir le code à chaque connexion mais uniquement lors de la connexion à un nouvel appareil. Revocation de mots de passe à la demande de l'utilisateur.
 
-### utilisateur(non-inscrit à un cours)
+### Utilisateur(non-inscrit à un cours)
 
 Les utilisateurs non inscrit n'auront dans un pas de néccesités d'inscription pour parcourir le site.
 
@@ -88,9 +88,22 @@ Afin d'améliorer la sécurité d'authentification nous vous conseillons de choi
 
 Nous vous recommandons également une sensibilisation à vos utilisateur dans la partie front-end pour indiquer les bonnes pratique lors du choix du mot de passe.
 
+## Gestion des données
+
+### Minimisation des données
+
+Pour éviter le vol de données, nous vous conseillons de limiter les données collectées et stockées, en ne collectant que les informations strictement nécessaires pour le fonctionnement de l'API. Il est également important de stocker les données uniquement pendant la période nécessaire et de les supprimer ou les anonymiser une fois qu'elles ne sont plus nécessaires. Pour protéger les données personnelles des utilisateurs, vous pouvez les anonymiser en remplaçant les entités personnelles (prénoms, noms, adresses) par des pseudonymes aléatoires. Le masquage des données sensibles, telles que les numéros de carte de crédit, adresses e-mail et numéros de téléphone, peut également être utilisé pour renforcer la sécurité.
+
+### Chiffrement des données sensibles
+
+Pour sécuriser les données sensibles, nous recommandons l'utilisation de tokens et de jetons. Par exemple, les numéros de carte de crédit peuvent être remplacés par des tokens, permettant ainsi de stocker et de traiter les transactions sans risque d'exposition des informations sensibles. De plus, l'utilisation du protocole HTTPS est essentielle pour chiffrer toutes les communications entre l'API et les utilisateurs, limitant ainsi les attaques de type "Man-in-the-middle". Cela garantit que les données échangées restent confidentielles et sécurisées tout au long du processus.
+
 ## Ressources
 
 https://aws.amazon.com/fr/what-is/mfa/
 https://www.microsoft.com/fr-fr/security/business/security-101/what-is-two-factor-authentication-2fa
 https://learn.microsoft.com/fr-fr/entra/identity/authentication/howto-mfa-mfasettings
 https://support.microsoft.com/fr-fr/account-billing/sauvegarder-les-informations-d-identification-du-compte-dans-microsoft-authenticator-bb939936-7a8d-4e88-bc43-49bc1a700a40
+https://www.cnil.fr/fr/securite-api-interfaces-de-programmation-applicative
+https://api.gouv.fr/les-api/api-pseudonymisation-documents
+https://fr.linkedin.com/advice/0/how-do-you-secure-encrypt-your-api-data?lang=fr
