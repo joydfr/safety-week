@@ -69,3 +69,28 @@ Pour maintenir la sécurité, il est important d'examiner et d'évaluer réguli�
 Enfin, pour protéger les interactions avec notre base de données, nous appliquons des pratiques d'authentification robustes. Ces pratiques sont adaptées au niveau d'implication de chaque utilisateur, garantissant ainsi une sécurité maximale.
 
 ## Authentification robuste selon les autorisations
+
+Dans le cadre de notre application, nous visons à atteindre deux objectifs principaux : la sécurité et la cohérence avec les besoins. Pour le système d'authentification, nous devons réaliser une analyse des risques avant de mettre en œuvre les moyens d'authentification. Cela nous permettra d'adapter la robustesse des mots de passe au contexte spécifique. En effet, notre super-admin ayant plus de droits que notre utilisateur, le système d'authentification sera différent pour chacun des rôles. Par exemple pour
+
+### Nos super-administrateurs et les administrateurs
+
+Un système Multifactorielle serait un impératif car c'est deux roles ont accès à des données sensible, je priviligérai le mots de passe avec plus de contraintes gérer par regex dans la partie back-end ainsi que la saissie d'un code envoyer par mail avec révocations au bout de 10 minutes et la présence avec géolocalosation pour vérifier si l'utilisateur se connecte depuis un endroit attendu et l'heure qui permettra de potentiellement limiter l'accès a certaines heures. Révocations du mot de passe tout les 90 jours.
+
+### Nos formateur et étudiants
+
+Un système authentification à deux facteurs (2FA) car chacun a accès à des données les étudiants au contenu et les formateur au données des étudiants, ceci nécéssite une protection supplémentaire. Le système d'authentification permettra de protèger leurs compte contre des accès non autorisés tout en étant simple à mettre en place. Mise en place d'un mot de passe robuste avec regex dans la partie back-end moins contraintes que pour les super-adminasteur et Admin et pour le deuxième facteur l'envoie d'un mail avec un code à saisir. Pour garder la sécurité mais éviter l'aspect contrainiant de la double authentification priviligié une solution 2FA permettant de mémoirisé les appareils utilisés régulierement. L'utilisateur n'aura pas à saissir le code à chaque connexion mais uniquement lors de la connexion à un nouvel appareil. Revocation de mots de passe à la demande de l'utilisateur.
+
+### utilisateur(non-inscrit à un cours)
+
+Les utilisateurs non inscrit n'auront dans un pas de néccesités d'inscription pour parcourir le site.
+
+Afin d'améliorer la sécurité d'authentification nous vous conseillons de choisir votre système d'authentification avec un verrouillage de compte pour verouillez temporairement les comptes s'il y a trop de tentatives d'authentification refusé, la posibilité de signaler une activité suspecte et blocage et déblocage des utilisateurs.
+
+Nous vous recommandons également une sensibilisation à vos utilisateur dans la partie front-end pour indiquer les bonnes pratique lors du choix du mot de passe.
+
+## Ressources
+
+https://aws.amazon.com/fr/what-is/mfa/
+https://www.microsoft.com/fr-fr/security/business/security-101/what-is-two-factor-authentication-2fa
+https://learn.microsoft.com/fr-fr/entra/identity/authentication/howto-mfa-mfasettings
+https://support.microsoft.com/fr-fr/account-billing/sauvegarder-les-informations-d-identification-du-compte-dans-microsoft-authenticator-bb939936-7a8d-4e88-bc43-49bc1a700a40
