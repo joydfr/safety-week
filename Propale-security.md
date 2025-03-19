@@ -100,6 +100,66 @@ Afin d'éviter cette exposition pour votre site, voici quelques suggestions :
 
 - Contrôles d'Accès : Mettre en place des contrôles d'accès, comme expliqué dans la partie autorisation, pour s'assurer que les utilisateurs n'accèdent qu'aux données pour lesquelles ils sont autorisés.
 
+### Absence de limitation de taux
+
+L'absence de limitation de taux dans votre application de formation en pair-à-pair peut exposer vous exposer à des risques significatifs, notamment en termes de surcharge du réseau et d'exploitation par des attaquants. Voici les attaques en l'absence de limitation de taux :
+
+#### Attaques par déni de service (DoS)
+
+Une attaque par déni de service consiste à inonder un serveur avec un grand nombre de requêtes pour le rendre inaccessible aux utilisateurs légitimes. Si aucune limitation de taux n'est mise en place, le serveur peut être submergé par un volume élevé de trafic, entraînant une perte de disponibilité et de performance.
+
+##### Conséquences
+
+- Perte de disponibilité : Le site devient temporairement inaccessible ou difficile à utiliser.
+
+- Pertes financières : Perte de revenus potentiels, notamment si le site est utilisé pour des transactions commerciales.
+
+- Impact sur la réputation : La confiance des utilisateurs est ébranlée, ce qui peut nuire à l'image de l'entreprise.
+
+#### Attaques par force brute
+
+Une attaque par force brute consiste à tester un grand nombre de combinaisons de mots de passe pour accéder à un compte. Sans limitation de taux, un attaquant peut essayer un nombre illimité de combinaisons en peu de temps, augmentant ainsi ses chances de réussite.
+
+##### Méthodes utilisées
+
+- Dictionnaires de mots de passe : Utilisation de listes de mots de passe couramment utilisés.
+
+- Exploration de combinaisons : Test de toutes les combinaisons possibles jusqu'à trouver une correspondance.
+
+##### Conséquences
+
+- Accès non autorisé : L'attaquant peut accéder aux profils d'utilisateurs, aux boîtes de messagerie électronique, ou même compromettre des comptes bancaires.
+
+#### Attaques par stuffing de credentials
+
+Le stuffing de credentials consiste à réaliser des tentatives massives d'authentification sur un site à partir d'identifiants et de mots de passe volés ou obtenus par d'autres moyens. Les dégâts incluent des pertes financières, une mauvaise image pour l'entreprise, et une perte d'accès au service pour les utilisateurs.
+
+##### Conséquences
+
+- Vol d'informations personnelles : Les attaquants peuvent accéder à des données sensibles.
+
+- Perte de confiance : Les utilisateurs peuvent perdre confiance dans le service.
+
+#### Comment se protéger de ces attaques ?
+
+Pour se protéger contre ces attaques, il est crucial de mettre en place une limitation de taux efficace. Voici quelques mesures :
+
+- Utilisation d'outils dédiés :
+
+  - Limiter le nombre de requêtes autorisées dans un temps donné.
+
+  - Utiliser des jetons pour contrôler les requêtes et ajuster les limites en fonction du trafic en temps réel.
+
+- Surveillance du trafic :
+
+  - Utiliser des journaux pour surveiller le trafic et détecter les abus potentiels.
+
+  - Adapter les limitations en fonction du trafic réel pour éviter les faux positifs.
+
+- Équilibre entre sécurité et expérience utilisateur :
+
+  - Assurer que les limitations ne nuisent pas à l'expérience utilisateur tout en protégeant contre les attaques.
+
 ## Ressource
 
 Injection SQl :
@@ -118,3 +178,19 @@ Exposition excessive des données :
 
 https://api.gouv.fr/les-api/api-pseudonymisation-documents
 https://fr.linkedin.com/advice/0/how-do-you-secure-encrypt-your-api-data?lang=fr
+
+Absence de limitation de taux :
+
+- déni de service :
+  https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/attaque-en-deni-de-service-ddos
+  https://www.microsoft.com/fr-fr/security/business/security-101/what-is-a-ddos-attack
+  https://www.altospam.com/glossaire/deni-de-service-ddos/
+
+- force brute :
+  https://www.cnil.fr/fr/definition/force-brute-attaque-informatique
+  https://www.oracle.com/fr/cloud/attaque-brute-force/
+  https://www.mailinblack.com/ressources/glossaire/attaque-bruteforce-comprendre-et-contrer-la-menace/
+
+- Credential stuffing :
+  https://www.cnil.fr/fr/definition/credential-stuffing-attaque-informatique
+  https://www.cnil.fr/fr/violation-du-trimestre-attaque-par-credential-stuffing-sur-un-site-web
