@@ -84,6 +84,22 @@ Pour vous protéger des faiblesses d'autorisation, voici quelques bonnes pratiqu
 
 ### Exposition excessive de données sensible
 
+Votre application, en tant que plateforme de formation en ligne, va collecter des données sensibles. La prochaine vulnérabilité que nous allons aborder est l'exposition excessive de données, qui consiste à divulguer plus d'informations qu'il n'est nécessaire aux utilisateurs et potentiellement aux attaquants. Le problème avec cette faille est la fuite de données sensibles telles que les informations personnelles, qui peuvent entraîner une usurpation d'identité, des problèmes financiers avec un accès aux moyens de paiement et aux comptes bancaires ou d'entreprise.
+
+Cette faille se manifeste souvent lors de la phase de développement, lorsque l'exposition des données est faite sans considérer leur sensibilité et sans filtrer les données avant de les afficher à l'utilisateur. Comme mentionné précédemment, si le filtrage est réalisé uniquement côté client avec le front-end, il ne sera pas protégé côté serveur pour empêcher l'exposition excessive de données.
+
+#### Comment se Prévenir de l'Exposition Excessive
+
+Afin d'éviter cette exposition pour votre site, voici quelques suggestions :
+
+- Analyse en Amont du Besoin de Données : Utiliser la minimisation des données en ne collectant que les informations strictement nécessaires. Éviter de donner la priorité au fonctionnel plutôt qu'à la sécurité.
+
+- Chiffrement des Données Sensibles : Utiliser le protocole HTTPS pour chiffrer toutes les communications entre l'API et les utilisateurs, ce qui limite les attaques de type "Man-in-the-Middle". Encrypter les données sensibles comme les mots de passe et les informations bancaires. Utiliser des pseudonymes aléatoires pour les données d'entités (nom, prénom et adresse), et utiliser des UUID (identifiants uniques universels) plutôt que les identifiants standards, car ils sont plus difficiles à deviner.
+
+- Filtrage au Niveau de l'API : Ne pas déléguer le filtrage des données à la partie front-end, mais privilégier le filtrage au niveau de l'API pour garantir que seules les informations nécessaires sont transmises.
+
+- Contrôles d'Accès : Mettre en place des contrôles d'accès, comme expliqué dans la partie autorisation, pour s'assurer que les utilisateurs n'accèdent qu'aux données pour lesquelles ils sont autorisés.
+
 ## Ressource
 
 Injection SQl :
@@ -97,3 +113,8 @@ https://aws.amazon.com/fr/what-is/mfa/
 https://www.microsoft.com/fr-fr/security/business/security-101/what-is-two-factor-authentication-2fa
 https://learn.microsoft.com/fr-fr/entra/identity/authentication/howto-mfa-mfasettings
 https://support.microsoft.com/fr-fr/account-billing/sauvegarder-les-informations-d-identification-du-compte-dans-microsoft-authenticator-bb939936-7a8d-4e88-bc43-49bc1a700a40
+
+Exposition excessive des données :
+
+https://api.gouv.fr/les-api/api-pseudonymisation-documents
+https://fr.linkedin.com/advice/0/how-do-you-secure-encrypt-your-api-data?lang=fr
